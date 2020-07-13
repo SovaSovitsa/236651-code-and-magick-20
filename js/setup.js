@@ -1,9 +1,10 @@
 
 'use strict';
-// Массив с именами магов
+// Массив с данными о магах
 var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var WIZARD_SURNAME = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
-
+var WIZARD_COAT = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+var WIZARD_EYES = ['black', 'red', 'blue', 'yellow', 'green'];
 
 // Делаем окно видимым
 var userDialog = document.querySelector('.setup');
@@ -17,32 +18,46 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
   .content
   .querySelector('.setup-similar-item');
 
-// Массив с объектами
 
-var getRandom = function () {
+// Функции с выборкой рандомного значения
+var getRandomName = function () {
   return Math.floor(Math.random() * WIZARD_NAMES.length);
 };
 
+var getRandomCoat = function () {
+  return Math.floor(Math.random() * WIZARD_COAT.length);
+};
+
+var getRandomEyes = function () {
+  return Math.floor(Math.random() * WIZARD_EYES.length);
+};
+
+// Массив с объектами
+
 var wizards = [
   {
-    name: WIZARD_NAMES[getRandom()],
-    surname: WIZARD_SURNAME[getRandom()],
-    coatColor: 'rgb(241, 43, 107)'
+    name: WIZARD_NAMES[getRandomName()],
+    surname: WIZARD_SURNAME[getRandomName()],
+    coatColor: WIZARD_COAT[getRandomCoat()],
+    eyesColor: WIZARD_EYES[getRandomEyes()],
   },
   {
-    name: WIZARD_NAMES[getRandom()],
-    surname: WIZARD_SURNAME[getRandom()],
-    coatColor: 'rgb(241, 43, 107)'
+    name: WIZARD_NAMES[getRandomName()],
+    surname: WIZARD_SURNAME[getRandomName()],
+    coatColor: WIZARD_COAT[getRandomCoat()],
+    eyesColor: WIZARD_EYES[getRandomEyes()],
   },
   {
-    name: WIZARD_NAMES[getRandom()],
-    surname: WIZARD_SURNAME[getRandom()],
-    coatColor: 'rgb(241, 43, 107)'
+    name: WIZARD_NAMES[getRandomName()],
+    surname: WIZARD_SURNAME[getRandomName()],
+    coatColor: WIZARD_COAT[getRandomCoat()],
+    eyesColor: WIZARD_EYES[getRandomEyes()],
   },
   {
-    name: WIZARD_NAMES[getRandom()],
-    surname: WIZARD_SURNAME[getRandom()],
-    coatColor: 'rgb(241, 43, 107)'
+    name: WIZARD_NAMES[getRandomName()],
+    surname: WIZARD_SURNAME[getRandomName()],
+    coatColor: WIZARD_COAT[getRandomCoat()],
+    eyesColor: WIZARD_EYES[getRandomEyes()],
   }
 ];
 
@@ -56,6 +71,9 @@ var renderWizard = function (wizard) {
 
   // Добавляем данные о цвете
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
+
+  // Добавляем цвет глаз
+  wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
 
   // Добавляем элемент в список
   similarListElement.appendChild(wizardElement);
