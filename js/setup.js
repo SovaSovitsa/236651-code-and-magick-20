@@ -19,45 +19,38 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
   .querySelector('.setup-similar-item');
 
 
-// Функции с выборкой рандомного значения
-var getRandomName = function () {
-  return Math.floor(Math.random() * WIZARD_NAMES.length);
+// Функция с выборкой рандомного значения
+var getRandom = function (array) {
+  return Math.floor(Math.random() * array.length);
 };
 
-var getRandomCoat = function () {
-  return Math.floor(Math.random() * WIZARD_COAT.length);
-};
-
-var getRandomEyes = function () {
-  return Math.floor(Math.random() * WIZARD_EYES.length);
-};
 
 // Массив с объектами
 
 var wizards = [
   {
-    name: WIZARD_NAMES[getRandomName()],
-    surname: WIZARD_SURNAME[getRandomName()],
-    coatColor: WIZARD_COAT[getRandomCoat()],
-    eyesColor: WIZARD_EYES[getRandomEyes()],
+    name: WIZARD_NAMES[getRandom(WIZARD_NAMES)],
+    surname: WIZARD_SURNAME[getRandom(WIZARD_SURNAME)],
+    coatColor: WIZARD_COAT[getRandom(WIZARD_COAT)],
+    eyesColor: WIZARD_EYES[getRandom(WIZARD_EYES)],
   },
   {
-    name: WIZARD_NAMES[getRandomName()],
-    surname: WIZARD_SURNAME[getRandomName()],
-    coatColor: WIZARD_COAT[getRandomCoat()],
-    eyesColor: WIZARD_EYES[getRandomEyes()],
+    name: WIZARD_NAMES[getRandom(WIZARD_NAMES)],
+    surname: WIZARD_SURNAME[getRandom(WIZARD_SURNAME)],
+    coatColor: WIZARD_COAT[getRandom(WIZARD_COAT)],
+    eyesColor: WIZARD_EYES[getRandom(WIZARD_EYES)],
   },
   {
-    name: WIZARD_NAMES[getRandomName()],
-    surname: WIZARD_SURNAME[getRandomName()],
-    coatColor: WIZARD_COAT[getRandomCoat()],
-    eyesColor: WIZARD_EYES[getRandomEyes()],
+    name: WIZARD_NAMES[getRandom(WIZARD_NAMES)],
+    surname: WIZARD_SURNAME[getRandom(WIZARD_SURNAME)],
+    coatColor: WIZARD_COAT[getRandom(WIZARD_COAT)],
+    eyesColor: WIZARD_EYES[getRandom(WIZARD_EYES)],
   },
   {
-    name: WIZARD_NAMES[getRandomName()],
-    surname: WIZARD_SURNAME[getRandomName()],
-    coatColor: WIZARD_COAT[getRandomCoat()],
-    eyesColor: WIZARD_EYES[getRandomEyes()],
+    name: WIZARD_NAMES[getRandom(WIZARD_NAMES)],
+    surname: WIZARD_SURNAME[getRandom(WIZARD_SURNAME)],
+    coatColor: WIZARD_COAT[getRandom(WIZARD_COAT)],
+    eyesColor: WIZARD_EYES[getRandom(WIZARD_EYES)],
   }
 ];
 
